@@ -27,7 +27,7 @@ for indexes in combinations(range(len(model)),N):
     vectors=[model[index] for index in indexes]
     for linearCombination,signList in signGenearator(vectors):
         distance=np.linalg.norm(linearCombination - inputvector)
-        if distance<=1:           
+        if distance<=1.5:           
             expression= model.index_to_key[indexes[0]] + ''.join((signList[i]+ model.index_to_key[indexes[i+1]] for i in range(N-1) )) 
             bestMatchs.put(
 
